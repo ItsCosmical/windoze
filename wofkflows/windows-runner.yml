@@ -1,0 +1,14 @@
+name: Run Windows Job
+on: [workflow_dispatch] # Allows you to start it manually
+
+jobs:
+  my-windows-job:
+    runs-on: windows-latest # Specifies the GitHub-hosted Windows runner
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4 # Downloads your repo files onto the VM
+
+      - name: Run a command
+        run: |
+          echo "wsg gang"
+          dir
